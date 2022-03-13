@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import * as S from "./Products.style";
 
 const ProductItem = ({
 	id,
@@ -10,13 +11,22 @@ const ProductItem = ({
 	rating,
 	description,
 }) => {
+	console.log(rating);
 	return (
-		<li>
+		<S.Product>
 			<Link to={`/product/${id}`}>
-				{title}
 				<img src={image} alt="" />
 			</Link>
-		</li>
+			<S.ProductInfo>
+				<Link to={`/category/${category}`}>
+					<span className="category">{category}</span>
+				</Link>
+				<Link to={`/product/${id}`}>
+					<span className="title">{title}</span>
+					<span className="price">{price}</span>
+				</Link>
+			</S.ProductInfo>
+		</S.Product>
 	);
 };
 

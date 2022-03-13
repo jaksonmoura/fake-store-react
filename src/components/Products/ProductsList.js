@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { API } from "../../API";
-import Product from "./ProductItem";
+import ProductItem from "./ProductItem";
+import * as S from "./Products.style";
 
 const ProductsList = () => {
 	const [products, setProducts] = useState([{}]);
@@ -15,11 +16,11 @@ const ProductsList = () => {
 	}, []);
 
 	return (
-		<ul>
+		<S.ProductsCollection>
 			{products.map((product) => (
-				<Product key={product.id} {...product} />
+				<ProductItem key={product.id} {...product} />
 			))}
-		</ul>
+		</S.ProductsCollection>
 	);
 };
 
