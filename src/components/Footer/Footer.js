@@ -9,7 +9,7 @@ const Footer = () => {
 				<Link to={"/"}>STORE</Link>
 				<nav>
 					<ul>
-						<li>Lala</li>
+						<li>Built by Jakson Moura</li>
 					</ul>
 				</nav>
 			</div>

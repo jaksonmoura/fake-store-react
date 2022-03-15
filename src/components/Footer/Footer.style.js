@@ -16,6 +16,10 @@ export const Footer = styled.footer`
 
 	nav {
 		display: inline-flex;
+
+		li {
+			list-style-type: none;
+		}
 	}
 
 	a {

@@ -17,6 +17,10 @@ export const Header = styled.header`
 	.logo {
 		height: 60px;
 		line-height: 60px;
+		padding: 0 10px;
+	}
+	a:hover {
+		background: rgba(0, 0, 0, 0.15);
 	}
 
 	nav {
@@ -37,9 +41,6 @@ export const Header = styled.header`
 					display: inline-flex;
 					align-items: center;
 					gap: 0.5rem;
-					&:hover {
-						background: rgba(0, 0, 0, 0.15);
-					}
 				}
 			}
 		}
