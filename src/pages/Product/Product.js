@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import * as S from "./Product.style";
 import { API } from "../../API";
 
 const Product = ({ id = 1 }) => {
@@ -15,7 +16,14 @@ const Product = ({ id = 1 }) => {
 
 	return (
 		<>
-			<h1>{product.title}</h1>
+			<S.ProductColumns>
+				<S.Image src={product.image} alt=""></S.Image>
+				<S.Info>
+					<S.Title>{product.title}</S.Title>
+					<S.Price>${product.price}</S.Price>
+					<S.Description>{product.description}</S.Description>
+				</S.Info>
+			</S.ProductColumns>
 		</>
 	);
 };
