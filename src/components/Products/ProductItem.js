@@ -23,7 +23,7 @@ const ProductItem = ({
 				</Link>
 				<Link to={`/product/${id}`}>
 					<span className="title">{title}</span>
-					<span className="price">{price}</span>
+					<span className="price">${price}</span>
 				</Link>
 			</S.ProductInfo>
 		</S.Product>
