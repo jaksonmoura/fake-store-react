@@ -13,16 +13,29 @@ export const ProductColumns = styled.div`
 	gap: 2rem;
 `;
 
-export const Image = styled.img`
+export const Image = styled.div`
 	width: 100%;
 	height: 100%;
-	max-height: 500px;
-	object-fit: contain;
+	background: #fff;
+	border-radius: 6px;
+	padding: 1rem;
+	img {
+		width: 100%;
+		height: 100%;
+		max-height: 500px;
+		object-fit: contain;
+	}
 `;
 
 export const Info = styled.div`
 	display: inline-flex;
 	flex-direction: column;
+`;
+
+export const Details = styled.div`
+	display: inline-flex;
+	justify-content: space-between;
+	align-items: center;
 `;
 
 export const Price = styled.span`
@@ -32,8 +45,52 @@ export const Price = styled.span`
 	color: #00f;
 `;
 
+export const Rating = styled.div`
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+
+	span {
+		background: #00f;
+		color: #fff;
+		border-radius: 6px;
+		padding: 2px 4px;
+	}
+
+	ul {
+		display: inline-flex;
+		align-items: center;
+
+		color: #ccc;
+
+		li.score {
+			color: orange;
+		}
+	}
+`;
+
+export const Availability = styled.div`
+	color: #555;
+	font-weight: 600;
+`;
+
 export const Description = styled.p`
 	color: #666;
 	font-size: 1.3rem;
 	line-height: 1.5;
+`;
+
+export const AddToCart = styled.button`
+	background: green;
+	color: #fff;
+	font-size: 1.5rem;
+	padding: 0.6rem 1rem;
+	border: 0;
+	border-radius: 6px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	margin-top: 2rem;
+	justify-self: flex-end;
 `;
