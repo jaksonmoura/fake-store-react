@@ -4,6 +4,8 @@ export const Footer = styled.footer`
 	width: 100%;
 	background: #333;
 	color: #ccc;
+	display: inline-flex;
+	justify-content: center;
 
 	.container {
 		display: inline-flex;
