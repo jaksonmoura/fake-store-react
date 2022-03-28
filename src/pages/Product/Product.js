@@ -43,7 +43,7 @@ const Product = () => {
 
 	useEffect(() => {
 		fetchProduct(id);
-	}, [id, rating]);
+	});
 
 	return (
 		<>
