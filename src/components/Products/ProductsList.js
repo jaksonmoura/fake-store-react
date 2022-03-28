@@ -17,21 +17,18 @@ const ProductsList = () => {
 	const handleClick = (e, back = false) => {
 		e.preventDefault();
 		let listWidth = productsWrapper.clientWidth;
-		let translationXPositive = Math.abs(translationX);
 		if (back) {
-			let tlX =
-				translationXPositive - listWidth >= 0
-					? translationXPositive - listWidth
-					: 0;
-			setTranslationX(tlX * -1);
+			if (translationX + listWidth > 0) return;
+			setTranslationX(translationX + listWidth);
 		} else {
-			let tlX =
-				translationXPositive + listWidth >= productsList.clientWidth
-					? translationXPositive - listWidth
-					: 0;
-			setTranslationX(tlX);
+			if (
+				Math.abs(translationX - listWidth) >= productsList.clientWidth
+			) {
+				setTranslationX(0);
+				return;
+			}
+			setTranslationX(translationX - listWidth);
 		}
-		console.log(listWidth, productsList.clientWidth, translationXPositive);
 	};
 
 	useEffect(() => {
@@ -40,7 +37,12 @@ const ProductsList = () => {
 
 	return (
 		<S.ProductsWrapper id="products-wrapper">
-			<S.ButtonScroll href="#" back onClick={(e) => handleClick(e)}>
+			<S.ButtonScroll
+				href="#"
+				style={{ display: translationX < 0 ? "inline-flex" : "none" }}
+				back
+				onClick={(e) => handleClick(e, true)}
+			>
 				<i className="material-icons">keyboard_arrow_left</i>
 			</S.ButtonScroll>
 			<S.ProductsCollection
