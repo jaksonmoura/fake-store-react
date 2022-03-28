@@ -29,6 +29,7 @@ export const ProductsCollection = styled.ul`
 	display: flex;
 	gap: 2rem;
 	padding: 0;
+	transition: 0.5s ease-in-out;
 `;
 
 export const Product = styled.li`

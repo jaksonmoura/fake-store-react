@@ -11,7 +11,6 @@ const ProductItem = ({
 	rating,
 	description,
 }) => {
-	console.log(rating);
 	return (
 		<S.Product>
 			<Link to={`/product/${id}`}>

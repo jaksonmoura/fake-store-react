@@ -1,8 +1,10 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import * as S from "./Header.style";
 
 const Header = () => {
+	const items = useSelector((state) => state.cart);
 	return (
 		<S.Header>
 			<div className="container">
@@ -18,8 +20,19 @@ const Header = () => {
 							<Link to={"/cart"}>
 								<span className="material-icons-outlined">
 									shopping_cart
-								</span>{" "}
+								</span>
 								You cart
+								<span
+									className="cart-counter"
+									style={{
+										display:
+											items.length === 0
+												? "none"
+												: "block",
+									}}
+								>
+									{items.length}
+								</span>
 							</Link>
 						</li>
 					</ul>
