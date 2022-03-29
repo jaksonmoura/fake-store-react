@@ -11,16 +11,11 @@ function App() {
 		<BrowserRouter>
 			<Header />
 			<main>
-				<div className="container">
-					<Routes>
-						<Route path="/" element={<Home />} />
-						<Route path="product/:id" element={<Product />}></Route>
-						<Route
-							path="category/:category"
-							element={<Category />}
-						/>
-					</Routes>
-				</div>
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="product/:id" element={<Product />}></Route>
+					<Route path="category/:category" element={<Category />} />
+				</Routes>
 			</main>
 			<Footer />
 		</BrowserRouter>

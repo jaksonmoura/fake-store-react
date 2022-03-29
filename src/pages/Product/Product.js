@@ -46,7 +46,7 @@ const Product = () => {
 	});
 
 	return (
-		<>
+		<div className="container">
 			<S.ProductColumns>
 				<S.Image>
 					<img src={product.image} alt="" />
@@ -70,7 +70,7 @@ const Product = () => {
 					</S.AddToCart>
 				</S.Info>
 			</S.ProductColumns>
-		</>
+		</div>
 	);
 };
 

@@ -3,16 +3,15 @@ import styled from "styled-components";
 export const ProductsWrapper = styled.div`
 	width: 100%;
 	overflow: hidden;
-	padding: 0 2rem;
+	padding: 0;
 	position: relative;
 `;
 
 export const ButtonScroll = styled.a`
-	width: 50px;
-	height: 50px;
-	background: #fff;
-	border: 1px solid #ccc;
-	border-radius: 50%;
+	width: 40px;
+	height: 100px;
+	background: var(--dark-blue);
+	border-radius: ${(props) => (props.back ? "0 6px 6px 0" : "6px 0 0 6px")};
 	position: absolute;
 	display: inline-flex;
 	justify-content: center;
@@ -20,7 +19,18 @@ export const ButtonScroll = styled.a`
 	text-decoration: none;
 	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 	z-index: 5;
-	top: 40px;
+	top: calc(50% - 50px);
+	opacity: 0.7;
+	transition: all 0.3s ease-in-out;
+
+	&:hover {
+		opacity: 1;
+	}
+
+	i {
+		color: #fff;
+	}
+
 	${(props) => (props.back ? "left: 0" : "right: 0;")}
 `;
 
@@ -64,7 +74,7 @@ export const ProductInfo = styled.div`
 
 	.category {
 		font-size: 0.9rem;
-		color: blue;
+		color: var(--blue);
 	}
 	.title {
 		font-weight: 600;

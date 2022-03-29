@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Header = styled.header`
 	width: 100%;
-	background: #00f;
+	background: var(--dark-blue);
 	color: #fff;
 	font-weight: 500;
 	height: 60px;
