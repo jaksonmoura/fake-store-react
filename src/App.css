@@ -9,6 +9,12 @@ body {
   height: 100%;
 }
 
+:root {
+  --dark-blue: #253042;
+  --blue: #05388b;
+  --brown: #dcc6ab;
+}
+
 #root {
   height: 100%;
   display: grid;
@@ -22,10 +28,11 @@ body {
 main {
   display: flex;
   width: 100%;
-  justify-content: center;
-  padding: 50px 0;
+  align-items: center;
+  padding: 0 0 50px 0;
   /* flex-grow: 1; */
   background: #eef2f3;
+  flex-direction: column;
 }
 
 .container {
@@ -42,5 +49,5 @@ ul {
 
 a,
 a:visited {
-  color: blue;
+  color: var(--blue);
 }
