@@ -5,7 +5,20 @@ const CartSlice = createSlice({
 	initialState: [],
 	reducers: {
 		addToCart: (state, action) => {
-			state.push(action.payload);
+			// TODO: Verify if item exists, if so increase qty
+			console.log(action.id);
+			const updatedItems = state.map((item) => {
+				if (item.id === action.payload.id) {
+					return { ...item, qty: action.payload.qty + 1 };
+				}
+				return item;
+			});
+
+			// return [
+			// 	...state,
+			// 	{ id: action.payload.id, item: { ...action.payload }, qty: 1 },
+			// ];
+			return updatedItems;
 		},
 		// removeFromCart: (state, action) => {
 		//     state.find

@@ -50,32 +50,11 @@ const ProductsList = ({ products = [] }) => {
 
 	return (
 		<S.ProductsWrapper id="products-wrapper">
-			<S.ButtonScroll
-				href="#"
-				style={{
-					visibility: translationX < 0 ? "visible" : "hidden",
-				}}
-				back
-				disabled={arrowDisabled}
-				onClick={(e) => handleClick(e, true)}
-			>
-				<i className="material-icons">keyboard_arrow_left</i>
-			</S.ButtonScroll>
-			<S.ProductsCollection
-				id="products-list"
-				style={{ transform: `translateX(${translationX}px)` }}
-			>
+			<S.ProductsCollection id="products-list">
 				{products.map((product) => (
 					<ProductItem key={product.id} {...product} />
 				))}
 			</S.ProductsCollection>
-			<S.ButtonScroll
-				href="#"
-				disabled={arrowDisabled}
-				onClick={(e) => handleClick(e)}
-			>
-				<i className="material-icons">keyboard_arrow_right</i>
-			</S.ButtonScroll>
 		</S.ProductsWrapper>
 	);
 };

@@ -11,7 +11,9 @@ body {
 
 :root {
   --dark-blue: #253042;
-  --blue: #05388b;
+  --primary: #253042;
+  --secondary: #05388b;
+  --accent: #00c3ff;
   --brown: #dcc6ab;
 }
 

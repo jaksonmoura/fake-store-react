@@ -14,7 +14,7 @@ const Product = () => {
 	const fetchProduct = async (productId) => {
 		let productResult = await API.fetchProduct(productId);
 		setProduct(productResult);
-		setRating(Math.round(product?.rating?.rate));
+		setRating(Math.round(productResult.rating));
 	};
 
 	const addProductToCart = () => {
@@ -43,25 +43,23 @@ const Product = () => {
 
 	useEffect(() => {
 		fetchProduct(id);
-	});
+	}, [id]);
 
 	return (
 		<div className="container">
 			<S.ProductColumns>
 				<S.Image>
-					<img src={product.image} alt="" />
+					<img src={product.thumbnail} alt="" />
 				</S.Image>
 				<S.Info>
 					<S.Title>{product.title}</S.Title>
 					<S.Details>
 						<S.Price>${product.price}</S.Price>
 						<S.Rating>
-							<span>{product.rating?.rate}</span>
+							<span>{product.rating}</span>
 							<RatingStar />
 						</S.Rating>
-						<S.Availability>
-							{product.rating?.count} items
-						</S.Availability>
+						<S.Availability>{product.stock} items</S.Availability>
 					</S.Details>
 					<S.Description>{product.description}</S.Description>
 					<S.AddToCart onClick={() => addProductToCart()}>

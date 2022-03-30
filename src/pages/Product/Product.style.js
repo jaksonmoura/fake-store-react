@@ -11,6 +11,9 @@ export const ProductColumns = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 2rem;
+	margin: 2rem auto 0 auto;
+	width: 100%;
+	max-width: 1000px;
 `;
 
 export const Image = styled.div`
@@ -42,7 +45,7 @@ export const Price = styled.span`
 	font-weight: 600;
 	justify-self: flex-end;
 	font-size: 1.5rem;
-	color: #00f;
+	color: var(--secondary);
 `;
 
 export const Rating = styled.div`
@@ -51,7 +54,7 @@ export const Rating = styled.div`
 	gap: 4px;
 
 	span {
-		background: #00f;
+		background: var(--secondary);
 		color: #fff;
 		border-radius: 6px;
 		padding: 2px 4px;
@@ -81,16 +84,18 @@ export const Description = styled.p`
 `;
 
 export const AddToCart = styled.button`
-	background: green;
-	color: #fff;
+	background: var(--accent);
+	color: var(--primary);
 	font-size: 1.5rem;
 	padding: 0.6rem 1rem;
 	border: 0;
 	border-radius: 6px;
 	display: inline-flex;
+	width: fit-content;
 	align-items: center;
 	justify-content: center;
 	gap: 0.5rem;
 	margin-top: 2rem;
 	justify-self: flex-end;
+	cursor: pointer;
 `;

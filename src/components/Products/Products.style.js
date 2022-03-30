@@ -10,7 +10,7 @@ export const ProductsWrapper = styled.div`
 export const ButtonScroll = styled.a`
 	width: 40px;
 	height: 100px;
-	background: var(--dark-blue);
+	background: var(--primary);
 	border-radius: ${(props) => (props.back ? "0 6px 6px 0" : "6px 0 0 6px")};
 	position: absolute;
 	display: inline-flex;
@@ -35,15 +35,15 @@ export const ButtonScroll = styled.a`
 `;
 
 export const ProductsCollection = styled.ul`
-	width: fit-content;
-	display: flex;
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
 	gap: 2rem;
 	padding: 0;
 	transition: 0.5s ease-in-out;
 `;
 
 export const Product = styled.li`
-	width: 250px;
 	min-height: 350px;
 	list-style-type: none;
 	background: #fff;
@@ -56,7 +56,15 @@ export const Product = styled.li`
 		flex-direction: column;
 		gap: 4px;
 		text-decoration: none;
-		color: green;
+
+		.category {
+			color: var(--accent);
+		}
+
+		&.product-text {
+			color: var(--secondary);
+			/* padding: 0 1rem; */
+		}
 	}
 
 	img {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import * as S from "./Products.style";
 
@@ -7,20 +7,32 @@ const ProductItem = ({
 	title,
 	price,
 	category,
-	image,
+	thumbnail,
 	rating,
 	description,
+	images,
 }) => {
+	const [firstImage, setFirstImage] = useState("");
+
+	const fetchImage = (imgs) => {
+		if (!imgs) return;
+		setFirstImage(imgs[0]);
+	};
+
+	useEffect(() => {
+		fetchImage(images);
+	});
+
 	return (
 		<S.Product>
 			<Link to={`/product/${id}`}>
-				<img src={image} alt="" />
+				<img src={firstImage} alt="" />
 			</Link>
 			<S.ProductInfo>
 				<Link to={`/category/${category}`}>
 					<span className="category">{category}</span>
 				</Link>
-				<Link to={`/product/${id}`}>
+				<Link className="product-text" to={`/product/${id}`}>
 					<span className="title">{title}</span>
 					<span className="price">${price}</span>
 				</Link>

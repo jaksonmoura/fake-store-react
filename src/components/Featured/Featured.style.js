@@ -6,7 +6,7 @@ export const Title = styled.h1`
 	font-size: 2.5rem;
 	line-height: 1;
 	a {
-		color: #333;
+		color: #f1f1f1;
 		text-decoration: none;
 	}
 `;
@@ -15,9 +15,24 @@ export const FeaturedWrapper = styled.div`
 	width: 100%;
 	display: inline-flex;
 	justify-content: center;
-	background: var(--brown);
+	background: var(--primary);
 	padding: 2rem 1rem;
 	margin-bottom: 2rem;
+	position: relative;
+	overflow: hidden;
+
+	&:before {
+		content: "";
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		bottom: -50%;
+		background: linear-gradient(45deg, #540dd8, aqua);
+		filter: blur(60px);
+		border-radius: 50%;
+		z-index: 0;
+		opacity: 0.3;
+	}
 `;
 
 export const FeaturedColumns = styled.div`
@@ -26,6 +41,7 @@ export const FeaturedColumns = styled.div`
 	gap: 2rem;
 	width: 100%;
 	max-width: 1000px;
+	z-index: 1;
 `;
 
 export const Image = styled.div`
@@ -37,8 +53,8 @@ export const Image = styled.div`
 		width: 100%;
 		height: 100%;
 		max-height: 500px;
-		object-fit: contain;
-		mix-blend-mode: multiply;
+		object-fit: cover;
+		border-radius: 6px;
 	}
 `;
 
@@ -58,7 +74,7 @@ export const Price = styled.span`
 	font-weight: 600;
 	justify-self: flex-end;
 	font-size: 1.5rem;
-	color: var(--blue);
+	color: var(--accent);
 `;
 
 export const Rating = styled.div`
@@ -91,13 +107,13 @@ export const Availability = styled.div`
 `;
 
 export const Description = styled.p`
-	color: #666;
+	color: #ccc;
 	font-size: 1.3rem;
 	line-height: 1.5;
 `;
 
-export const Cta = styled.a`
-	color: var(--dark-blue);
+export const Cta = styled.div`
+	color: var(--accent);
 	text-decoration: none;
 	font-size: 1.5rem;
 	width: fit-content;
@@ -109,4 +125,8 @@ export const Cta = styled.a`
 	gap: 0.5rem;
 	margin-top: 2rem;
 	justify-self: flex-end;
+
+	&:visited {
+		color: var(--accent);
+	}
 `;

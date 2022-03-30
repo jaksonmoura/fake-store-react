@@ -8,7 +8,7 @@ const Home = () => {
 	const [products, setProducts] = useState([{}]);
 	const fetchProducts = async () => {
 		let productsResult = await API.fetchProducts();
-		setProducts(productsResult);
+		setProducts(productsResult.products);
 	};
 
 	useEffect(() => {
