@@ -5,7 +5,10 @@ const CartSlice = createSlice({
 	initialState: [],
 	reducers: {
 		addToCart: (state, action) => {
-			if (state.length !== 0) {
+			let itemToUpdate = state.filter(
+				(item) => item.id === action.payload.id,
+			);
+			if (itemToUpdate.length !== 0) {
 				const itemsUpdated = state.map((item) => {
 					if (item.id !== action.payload.id) {
 						return item;
@@ -20,7 +23,7 @@ const CartSlice = createSlice({
 				state.push({
 					id: action.payload.id,
 					item: action.payload,
-					qty: state.qty + 1 || 1,
+					qty: 1,
 				});
 			}
 		},
