@@ -6,6 +6,25 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import store from "./store";
 import { Provider } from "react-redux";
+import { hydrate } from "./cartSlice";
+
+store.subscribe(() => {
+	localStorage.setItem("fake-store-cart", JSON.stringify(store.getState()));
+});
+
+const getItemsFromLocalStorage = () => {
+	try {
+		const persistedState = localStorage.getItem("fake-store-cart");
+		if (persistedState) return JSON.parse(persistedState);
+	} catch (e) {
+		console.log(e);
+	}
+};
+
+const items = getItemsFromLocalStorage();
+if (items) {
+	store.dispatch(hydrate(items.cart));
+}
 
 ReactDOM.render(
 	<React.StrictMode>

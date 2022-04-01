@@ -4,6 +4,9 @@ const CartSlice = createSlice({
 	name: "cart",
 	initialState: [],
 	reducers: {
+		hydrate: (state, action) => {
+			return action.payload;
+		},
 		addToCart: (state, action) => {
 			let itemToUpdate = state.filter(
 				(item) => item.id === action.payload.id,
@@ -33,5 +36,5 @@ const CartSlice = createSlice({
 	},
 });
 
-export const { addToCart } = CartSlice.actions;
+export const { addToCart, hydrate } = CartSlice.actions;
 export default CartSlice.reducer;
