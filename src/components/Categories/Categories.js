@@ -21,9 +21,7 @@ const Categories = () => {
 			<ul>
 				{categories.map((c, i) => (
 					<li key={i}>
-						<Link to={`/categories/${c}`}>
-							{c.replace("-", " ")}
-						</Link>
+						<Link to={`/products/${c}`}>{c.replace("-", " ")}</Link>
 					</li>
 				))}
 			</ul>
