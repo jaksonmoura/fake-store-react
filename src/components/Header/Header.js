@@ -16,7 +16,7 @@ const Header = () => {
 						<li>
 							<Link to={"/categories"}>Categories</Link>
 						</li>
-						<li>
+						<li className="cart">
 							<Link to={"/cart"}>
 								<span className="material-icons-outlined">
 									shopping_cart
