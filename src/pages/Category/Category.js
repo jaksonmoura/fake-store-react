@@ -13,7 +13,7 @@ const Category = () => {
 	const fetchProductsFromCategory = async (category = "") => {
 		let products = await API.fetchProductsCategory(category);
 		console.log(products);
-		setProducts(products);
+		setProducts(products.products);
 	};
 
 	useEffect(() => {
@@ -21,7 +21,7 @@ const Category = () => {
 	}, [category]);
 
 	return (
-		<>
+		<div className="container">
 			<h1>
 				Products in <em>{category}</em> category.
 			</h1>
@@ -30,7 +30,7 @@ const Category = () => {
 					<ProductItem key={product.id} {...product} />
 				))}
 			</S.ProductsCollection>
-		</>
+		</div>
 	);
 };
 
