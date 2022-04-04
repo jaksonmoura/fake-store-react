@@ -6,7 +6,6 @@ export const Header = styled.header`
 	color: #fff;
 	font-weight: 500;
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 
 	.container {
@@ -18,6 +17,7 @@ export const Header = styled.header`
 
 	.logo {
 		padding: 5px 10px;
+		line-height: 1.8;
 	}
 	a {
 		height: 60%;
