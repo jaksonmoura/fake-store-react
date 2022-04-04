@@ -2,6 +2,7 @@
 *::after,
 *::before {
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
 html,
@@ -14,6 +15,7 @@ body {
   --primary: #6819b8;
   --secondary: #51237e;
   --accent: #00c3ff;
+  --accent-dark: #00a2ff;
   --brown: #dcc6ab;
 }
 
