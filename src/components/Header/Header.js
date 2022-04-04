@@ -21,7 +21,7 @@ const Header = () => {
 								<span className="material-icons-outlined">
 									shopping_cart
 								</span>
-								You cart
+								Your cart
 								<span
 									className="cart-counter"
 									style={{
