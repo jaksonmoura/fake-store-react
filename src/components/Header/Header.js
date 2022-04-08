@@ -13,9 +13,6 @@ const Header = () => {
 				</Link>
 				<nav>
 					<ul>
-						<li>
-							<Link to={"/categories"}>Categories</Link>
-						</li>
 						<li className="cart">
 							<Link to={"/cart"}>
 								<span className="material-icons-outlined">
