@@ -42,6 +42,9 @@ export const FeaturedColumns = styled.div`
 	width: 100%;
 	max-width: 1000px;
 	z-index: 1;
+
+	&.component-loading {
+	}
 `;
 
 export const Image = styled.div`
