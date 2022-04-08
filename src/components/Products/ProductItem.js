@@ -32,7 +32,7 @@ const ProductItem = ({
 	return (
 		<>
 			{loading && (
-				<S.Product className="component-loading">
+				<S.Product key={id} className="component-loading">
 					<div className="loading box box-h-xlg box-w-xlg"></div>
 					<div className="loading box box-w-sm box-h-sm"></div>
 					<div className="loading box box-h-md box-w-lg"></div>
@@ -40,7 +40,7 @@ const ProductItem = ({
 				</S.Product>
 			)}
 			{!loading && (
-				<S.Product>
+				<S.Product key={id}>
 					<Link to={`/product/${id}`}>
 						<img src={firstImage} alt="" />
 					</Link>

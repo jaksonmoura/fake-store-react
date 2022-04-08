@@ -8,7 +8,7 @@ const ProductsList = ({ products = [] }) => {
 	const [arrowDisabled, setArrowDisabled] = useState(false);
 	const productsList = document.querySelector("#products-list");
 	const productsWrapper = document.querySelector("#products-wrapper");
-
+	const tick = new Date().getTime();
 	const calculateListTranslate = (back) => {
 		let listVisibleWidth = productsWrapper.clientWidth;
 		let rect = productsList.getBoundingClientRect();
@@ -51,8 +51,8 @@ const ProductsList = ({ products = [] }) => {
 	return (
 		<S.ProductsWrapper id="products-wrapper">
 			<S.ProductsCollection id="products-list">
-				{products.map((product) => (
-					<ProductItem key={product.id} {...product} />
+				{products.map((product, i) => (
+					<ProductItem key={i * tick} {...product} />
 				))}
 			</S.ProductsCollection>
 		</S.ProductsWrapper>
