@@ -7,7 +7,6 @@ const Categories = () => {
 	const [loading, setLoading] = useState(true);
 	const fetchCategories = async () => {
 		const categs = await API.fetchCategories();
-		console.log(categs);
 		setCategories(categs);
 		setLoading(false);
 	};
@@ -25,7 +24,7 @@ const Categories = () => {
 						Array(10)
 							.fill(0)
 							.map((item, i) => (
-								<div className="component-loading">
+								<div key={i} className="component-loading">
 									<div className="loading box box-h-sm"></div>
 								</div>
 							))}

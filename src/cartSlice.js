@@ -40,7 +40,6 @@ const CartSlice = createSlice({
 					qty: item.qty + 1,
 				};
 			});
-			console.log(itemsUpdated);
 			return itemsUpdated;
 		},
 		decreaseQty: (state, action) => {
@@ -53,7 +52,6 @@ const CartSlice = createSlice({
 					qty: item.qty - 1,
 				};
 			});
-			console.log(itemsUpdated);
 			return itemsUpdated;
 		},
 		removeFromCart: (state, action) => {
