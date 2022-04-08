@@ -43,6 +43,7 @@ export const CartItem = styled.li`
 	gap: 10px;
 	padding: 10px;
 	width: 100%;
+	position: relative;
 
 	&:not(:last-of-type) {
 		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -71,6 +72,49 @@ export const ItemDetails = styled.div`
 		font-size: 0.9rem;
 		color: #666;
 	}
+`;
+
+export const ItemQty = styled.div`
+	display: grid;
+	grid-template-columns: 35px 50px 35px;
+
+	input {
+		text-align: center;
+	}
+`;
+
+export const ItemQtyArrow = styled.button`
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	background-color: #fff;
+
+	&:first-of-type {
+		border-radius: 4px 0 0 4px;
+	}
+
+	&:last-of-type {
+		border-radius: 0 4px 4px 0;
+	}
+
+	&[disabled] {
+		opacity: 0.5;
+	}
+`;
+
+export const RemoveItem = styled.button`
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	background-color: #fff;
+	padding: 2px 6px;
+	color: #666;
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	border-radius: 4px;
 `;
 
 export const OrderSummary = styled.div`
