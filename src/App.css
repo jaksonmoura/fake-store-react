@@ -54,4 +54,68 @@ ul {
 a,
 a:visited {
   color: var(--blue);
+  text-decoration: none;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background: #eef2f3;
+  overflow: hidden;
+  position: relative;
+}
+.loading:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, #c7cbcc, transparent);
+  z-index: 0;
+  animation: loading 2s cubic-bezier(0.075, 0.82, 0.165, 1.3) infinite;
+}
+
+@keyframes loading {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.component-loading {
+  mix-blend-mode: multiply;
+}
+.component-loading .box {
+  width: 100%;
+  background: #eef2f3;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.component-loading .box-h-xlg {
+  height: 300px;
+}
+.component-loading .box-h-md {
+  height: 40px;
+}
+.component-loading .box-h-sm {
+  height: 30px;
+}
+.component-loading .box-h-lg {
+  height: 100px;
+}
+.component-loading .box-w-md {
+  max-width: 150px;
+}
+.component-loading .box-w-sm {
+  max-width: 100px;
+}
+.component-loading .box-w-xlg {
+  max-width: 300px;
 }
