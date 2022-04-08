@@ -30,11 +30,38 @@ const CartSlice = createSlice({
 				});
 			}
 		},
+		increaseQty: (state, action) => {
+			const itemsUpdated = state.map((item) => {
+				if (item.id !== action.payload) {
+					return item;
+				}
+				return {
+					...item,
+					qty: item.qty + 1,
+				};
+			});
+			console.log(itemsUpdated);
+			return itemsUpdated;
+		},
+		decreaseQty: (state, action) => {
+			const itemsUpdated = state.map((item) => {
+				if (item.id !== action.payload) {
+					return item;
+				}
+				return {
+					...item,
+					qty: item.qty - 1,
+				};
+			});
+			console.log(itemsUpdated);
+			return itemsUpdated;
+		},
 		removeFromCart: (state, action) => {
-			state.filter((item) => item.id !== action.payload);
+			return state.filter((item) => item.id !== action.payload);
 		},
 	},
 });
 
-export const { addToCart, hydrate } = CartSlice.actions;
+export const { addToCart, hydrate, increaseQty, decreaseQty, removeFromCart } =
+	CartSlice.actions;
 export default CartSlice.reducer;
