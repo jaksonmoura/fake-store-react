@@ -21,11 +21,22 @@ export const Footer = styled.footer`
 
 		li {
 			list-style-type: none;
+			display: flex;
+			justify-content: center;
+			gap: 1rem;
+			margin-top: 0.5rem;
 		}
 	}
 
 	a {
 		color: #ccc;
 		text-decoration: none;
+		display: inline-flex;
+		align-items: center;
+
+		img {
+			width: 24px;
+			object-fit: contain;
+		}
 	}
 `;
