@@ -13,7 +13,7 @@ body {
 :root {
   --dark-blue: #253042;
   --primary: #6819b8;
-  --secondary: #51237e;
+  --primary-dark: #4a148c;
   --accent: #00c3ff;
   --accent-dark: #00a2ff;
   --brown: #dcc6ab;
@@ -118,4 +118,15 @@ a:visited {
 }
 .component-loading .box-w-xlg {
   max-width: 300px;
+}
+
+button {
+  border: 0;
+  border-radius: 6px;
+  min-height: 40px;
+  padding: 0 20px;
+}
+
+hr {
+  border-top: 1px solid #e5e5e5;
 }
