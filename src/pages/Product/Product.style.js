@@ -45,7 +45,7 @@ export const Price = styled.span`
 	font-weight: 600;
 	justify-self: flex-end;
 	font-size: 1.5rem;
-	color: var(--secondary);
+	color: var(--primary-dark);
 `;
 
 export const Rating = styled.div`
@@ -54,7 +54,7 @@ export const Rating = styled.div`
 	gap: 4px;
 
 	span {
-		background: var(--secondary);
+		background: var(--primary-dark);
 		color: #fff;
 		border-radius: 6px;
 		padding: 2px 4px;
