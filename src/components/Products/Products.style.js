@@ -62,7 +62,7 @@ export const Product = styled.li`
 		}
 
 		&.product-text {
-			color: var(--secondary);
+			color: var(--primary-dark);
 			/* padding: 0 1rem; */
 		}
 	}
