@@ -14,8 +14,8 @@ body {
   --dark-blue: #253042;
   --primary: #6819b8;
   --primary-dark: #4a148c;
-  --accent: #00c3ff;
-  --accent-dark: #00a2ff;
+  --accent: #007cb5;
+  --accent-dark: #005c99;
   --brown: #dcc6ab;
 }
 
@@ -129,4 +129,11 @@ button {
 
 hr {
   border-top: 1px solid #e5e5e5;
+}
+
+.panel {
+  background: #fffebf;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 20px;
 }
