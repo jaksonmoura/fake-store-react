@@ -29,6 +29,10 @@ export const OrderGrid = styled.div`
 	display: grid;
 	gap: 1rem;
 	grid-template-columns: auto 300px;
+
+	@media screen and (max-width: 992px) {
+		grid-template-columns: auto;
+	}
 `;
 
 export const CartList = styled.ul`
@@ -45,6 +49,11 @@ export const CartItem = styled.li`
 	width: 100%;
 	position: relative;
 
+	@media screen and (max-width: 600px) {
+		grid-template-columns: auto;
+		gap: 1rem;
+	}
+
 	&:not(:last-of-type) {
 		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 	}
@@ -59,6 +68,17 @@ export const CartItem = styled.li`
 	}
 
 	p {
+		@media screen and (max-width: 992px) {
+			&.subtotal {
+				display: inline-flex;
+				justify-content: space-between;
+				text-align: left;
+			}
+		}
+
+		&.subtotal {
+			text-align: right;
+		}
 		padding: 0;
 		margin: 0;
 	}
@@ -67,6 +87,11 @@ export const CartItem = styled.li`
 export const ItemDetails = styled.div`
 	display: inline-flex;
 	flex-direction: column;
+
+	@media screen and (max-width: 992px) {
+		span {
+		}
+	}
 
 	span {
 		font-size: 0.9rem;
@@ -136,6 +161,9 @@ export const OrderSummary = styled.div`
 	color: #444;
 	padding: 10px;
 	border-radius: 6px;
+	width: 100%;
+	max-width: 400px;
+	justify-self: flex-end;
 
 	ul {
 		display: inline-flex;
@@ -160,9 +188,10 @@ export const OrderButton = styled.button`
 	width: 100%;
 	height: 60px;
 	background-color: var(--accent);
+	color: #fff;
 	border: none;
 	border-radius: 6px;
-	font-size: 1rem;
+	font-size: 1.2rem;
 	font-weight: 500;
 	margin-top: 1rem;
 	cursor: pointer;

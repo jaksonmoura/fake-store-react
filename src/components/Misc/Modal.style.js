@@ -6,6 +6,7 @@ export const Modal = styled.div`
 	margin: 0 auto;
 	background: rgba(0, 0, 0, 0.5);
 	position: fixed;
+	padding: 0 1rem;
 	top: 0;
 	left: 0;
 	z-index: 100;
