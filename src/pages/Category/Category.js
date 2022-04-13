@@ -9,10 +9,11 @@ const Category = () => {
 	const [products, setProducts] = useState([{}]);
 	let params = useParams();
 	const category = params.category;
+	const categoryTitle =
+		category.charAt(0).toUpperCase() + category.slice(1).replace("-", " ");
 
 	const fetchProductsFromCategory = async (category = "") => {
 		let products = await API.fetchProductsCategory(category);
-		console.log(products);
 		setProducts(products.products);
 	};
 
@@ -23,7 +24,7 @@ const Category = () => {
 	return (
 		<div className="container">
 			<h1>
-				Products in <em>{category}</em> category.
+				<em>Products in {categoryTitle}</em> category.
 			</h1>
 			<S.ProductsCollection>
 				{products.map((product) => (

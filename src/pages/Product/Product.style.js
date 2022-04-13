@@ -14,6 +14,10 @@ export const ProductColumns = styled.div`
 	margin: 2rem auto 0 auto;
 	width: 100%;
 	max-width: 1000px;
+
+	@media screen and (max-width: 992px) {
+		grid-template-columns: 1fr;
+	}
 `;
 
 export const Image = styled.div`
@@ -45,7 +49,7 @@ export const Price = styled.span`
 	font-weight: 600;
 	justify-self: flex-end;
 	font-size: 1.5rem;
-	color: var(--secondary);
+	color: var(--primary-dark);
 `;
 
 export const Rating = styled.div`
@@ -54,7 +58,7 @@ export const Rating = styled.div`
 	gap: 4px;
 
 	span {
-		background: var(--secondary);
+		background: var(--primary-dark);
 		color: #fff;
 		border-radius: 6px;
 		padding: 2px 4px;
@@ -85,7 +89,7 @@ export const Description = styled.p`
 
 export const AddToCart = styled.button`
 	background: var(--accent);
-	color: rgba(0, 0, 0, 0.8);
+	color: #fff;
 	font-size: 1.5rem;
 	padding: 0.6rem 1rem;
 	border: 0;
@@ -98,4 +102,8 @@ export const AddToCart = styled.button`
 	margin-top: 2rem;
 	justify-self: flex-end;
 	cursor: pointer;
+	&:hover {
+		opacity: 0.9;
+		background-color: var(--accent-dark);
+	}
 `;

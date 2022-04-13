@@ -43,6 +43,11 @@ export const FeaturedColumns = styled.div`
 	max-width: 1000px;
 	z-index: 1;
 
+	@media screen and (max-width: 992px) {
+		grid-template-columns: 1fr;
+		grid-template-rows: minmax(auto, 250px) 50%;
+	}
+
 	&.component-loading {
 	}
 `;
@@ -52,12 +57,19 @@ export const Image = styled.div`
 	height: 100%;
 	border-radius: 6px;
 	padding: 1rem;
+
 	img {
 		width: 100%;
 		height: 100%;
 		max-height: 500px;
 		object-fit: cover;
 		border-radius: 6px;
+	}
+	@media screen and (max-width: 992px) {
+		padding: 0;
+		img {
+			max-height: 250px;
+		}
 	}
 `;
 
