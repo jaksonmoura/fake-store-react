@@ -13,12 +13,7 @@ const Home = () => {
 	const fetchProducts = async () => {
 		let productsResult = await API.fetchProducts();
 		setProducts(productsResult.products);
-		setRandomFeatured(
-			productsResult.products[
-				Math.floor(Math.random() * productsResult.products.length)
-			],
-		);
-		console.log(randomFeatured);
+		setRandomFeatured(productsResult.products[Math.floor(Math.random() * productsResult.products.length)]);
 	};
 
 	const toggleMoreCategoriesMobile = (e) => {
@@ -38,10 +33,7 @@ const Home = () => {
 				<div className="container">
 					<S.HomeCategories>
 						<Categories />
-						<button
-							className="show-more-categories"
-							onClick={(e) => toggleMoreCategoriesMobile(e)}
-						>
+						<button className="show-more-categories" onClick={(e) => toggleMoreCategoriesMobile(e)}>
 							{isCategoriesVisible ? (
 								<i className="material-icons">remove</i>
 							) : (
